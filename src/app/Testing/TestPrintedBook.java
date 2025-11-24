@@ -12,5 +12,17 @@ public class TestPrintedBook{
         System.out.println("Pages: " + book1.getPages());
         System.out.println("Cost: $" + book1.getCost()+ " USD");
 
+
+        PrintedBook book2 = new PrintedBook("Dune", "Herbert", Genre.SCIFI, 676);
+        PrintedBook book3 = new PrintedBook("One Piece", "Oda", Genre.FANTASY, 767);
+        System.out.println("Total Books: " + PrintedBook.getAllPrintedBooks().size());
+
+        System.out.println("Recap of all Prinetd Books");
+        for (PrintedBook book : PrintedBook.getAllPrintedBooks()){
+            System.out.println(book.getTitle()+ " - " + book.getPages() + " pages ($ " + book.getCost() + ")" );
+
+        }
+
+
     }
 }
