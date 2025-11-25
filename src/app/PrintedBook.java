@@ -57,4 +57,11 @@ public class PrintedBook extends Book{
             System.out.printf("%d. %s - %d pages\n", (i - start +1), book.getTitle(), book.getPages());
         }
     }
+    public static double getTotalPrintedBookCost(){
+        double total = 0.0;
+        for (PrintedBook book : allPrintedBooks){
+            total += book.getCost();
+        }
+        return total;
+    }
 }
