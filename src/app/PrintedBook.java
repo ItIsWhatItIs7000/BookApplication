@@ -54,7 +54,7 @@ public class PrintedBook extends Book{
         int start = Math.max(0, size - 3);
         for (int i = start; i < size; i++){
             PrintedBook book = allPrintedBooks.get(i);
-            System.out.printf("%d. %s - %d pages", (i - start +1), book.getTitle(), book.getPages());
+            System.out.printf("%d. %s - %d pages\n", (i - start +1), book.getTitle(), book.getPages());
         }
     }
 }

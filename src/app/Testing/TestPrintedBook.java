@@ -23,6 +23,11 @@ public class TestPrintedBook{
 
         }
 
+        System.out.println(" Test of: computeaveragePages:");
+        System.out.printf("Average pages: %.2f\n", PrintedBook.computeAveragePages());
+        System.out.println(" Test of: DisplayLastThreePrintedBooks:");
+        PrintedBook.displayLastThreePrintedBooks();
+
 
     }
 }
