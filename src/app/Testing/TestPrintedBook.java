@@ -27,7 +27,8 @@ public class TestPrintedBook{
         System.out.printf("Average pages: %.2f\n", PrintedBook.computeAveragePages());
         System.out.println(" Test of: DisplayLastThreePrintedBooks:");
         PrintedBook.displayLastThreePrintedBooks();
-
+        System.out.println(" Test of: getTotalPrintedBookCost:");
+        System.out.printf("Total cost of all the printed Books: $%.2f\n", PrintedBook.getTotalPrintedBookCost());
 
     }
 }
