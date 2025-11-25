@@ -30,4 +30,7 @@ public class PrintedBook extends Book{
     public static List<PrintedBook> getAllPrintedBooks(){
         return allPrintedBooks;
     }
+    protected void storeBookInfo(String title, String author, Genre genre, double cost){
+        allPrintedBooks.add(this);
+    }   
 }

@@ -19,4 +19,7 @@ public abstract class Book{
     public Genre getGenre(){
         return genre;
     }
+    
+    public abstract double getCost();
+    protected abstract void storeBookInfo(String title, String author, Genre genre, double cost);
 }
