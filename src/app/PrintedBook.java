@@ -33,4 +33,28 @@ public class PrintedBook extends Book{
     protected void storeBookInfo(String title, String author, Genre genre, double cost){
         allPrintedBooks.add(this);
     }   
+    public static double computeAveragePages(){
+        if (allPrintedBooks.isEmpty()){
+            return 0.0;
+        }
+        int totalPages = 0;
+        for (PrintedBook book : allPrintedBooks){
+            totalPages += book.getPages();
+        }
+        return (double) totalPages / allPrintedBooks.size();
+
+    }
+    public static void displayLastThreePrintedBooks(){
+        System.out.println(" The last 3 printned books");
+        if (allPrintedBooks.isEmpty()){
+            System.out.println("No printed books.");
+            return;
+        }
+        int size = allPrintedBooks.size();
+        int start = Math.max(0, size - 3);
+        for (int i = start; i < size; i++){
+            PrintedBook book = allPrintedBooks.get(i);
+            System.out.printf("%d. %s - %d pages", (i - start +1), book.getTitle(), book.getPages());
+        }
+    }
 }
