@@ -22,6 +22,14 @@ public class TestBookApplication{
 
         System.out.println("Test: getBookcountByGenre()");
         Map<Genre, Integer> genreCounts = app.getBookCountByGenre();
+        System.out.println("Books separated by genre:");
+        for (Map.Entry<Genre, Integer> entry : genreCounts.entrySet()){
+            System.out.println("  "+entry.getKey() + ": " + entry.getValue());
+        }
+
+        System.out.println("Test: getTotalCost()");
+        System.out.printf("Total costs of all books: $%.2f\n", app.getTotalCost());
+        System.out.println("If I can see this we coolio");
 
     }
 }
