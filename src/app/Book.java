@@ -22,4 +22,10 @@ public abstract class Book{
     
     public abstract double getCost();
     protected abstract void storeBookInfo(String title, String author, Genre genre, double cost);
+
+    public String toString(){
+        return String.format("%s by %s [%s] - $%.2f", title, author, genre, getCost());
+
+    }
+    //added String toString since I was getting irregular Book Output  rather than regular book Details
 }
