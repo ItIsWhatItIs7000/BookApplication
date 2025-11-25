@@ -7,12 +7,14 @@ public class AudioBook extends Book{
 
     private int lengthInMinutes;
     private static List<AudioBook> allAudioBooks = new ArrayList<>();
+    private static int totalAudioMinutes = 0; 
     private static final double COST_PER_MINUTE = 5.0;
 
     public AudioBook(String title, String author, Genre genre, int lengthInMinutes){
         super(title, author, genre);
         this.lengthInMinutes = lengthInMinutes;
         allAudioBooks.add(this);
+        totalAudioMinutes += lengthInMinutes;
 
     }
     public int getLengthInMinutes(){
@@ -21,7 +23,9 @@ public class AudioBook extends Book{
 
 
     public void setLengthInMinutes(int lengthInMinutes){
+        totalAudioMinutes -= this.lengthInMinutes;
         this.lengthInMinutes = lengthInMinutes;
+        totalAudioMinutes += lengthInMinutes;
     }
     public double getCost(){
         return lengthInMinutes * COST_PER_MINUTE;
@@ -37,11 +41,7 @@ public class AudioBook extends Book{
         if (allAudioBooks.isEmpty()){
             return 0.0;
         }
-        int totalLengthInMinutes = 0;
-        for (AudioBook book : allAudioBooks){
-            totalLengthInMinutes += book.getLengthInMinutes();
-        }
-        return (double) totalLengthInMinutes / allAudioBooks.size();
+        return (double) totalAudioMinutes / allAudioBooks.size();
 
     }
     public static void displayLastThreeAudioBooks(){
@@ -63,5 +63,8 @@ public class AudioBook extends Book{
             total += book.getCost();
         }
         return total;
+    }
+    public static int getTotalAudioMinutes(){
+    return totalAudioMinutes;
     }
 }

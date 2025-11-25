@@ -29,6 +29,8 @@ public class TestAudioBook{
         AudioBook.displayLastThreeAudioBooks();
         System.out.println(" Test of: getTotalAudioBookCost:");
         System.out.printf("Total cost of all the audio books: $%.2f\n", AudioBook.getTotalAudioBookCost());
+        System.out.println(" Test of: getTotalAudioMinutes:");
+        System.out.println("Total minutes: " + AudioBook.getTotalAudioMinutes()); 
 
     }
 }
