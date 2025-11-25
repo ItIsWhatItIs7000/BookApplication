@@ -3,63 +3,63 @@ package app;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PrintedBook extends Book{
+public class AudioBook extends Book{
 
-    private int pages;
-    private static List<PrintedBook> allPrintedBooks = new ArrayList<>();
-    private static final double COST_PER_PAGE = 10.0;
+    private int lengthInMinutes;
+    private static List<AudioBook> allAudioBooks = new ArrayList<>();
+    private static final double COST_PER_MINUTE = 5.0;
 
-    public PrintedBook(String title, String author, Genre genre, int pages){
+    public AudioBook(String title, String author, Genre genre, int lengthInMinutes){
         super(title, author, genre);
-        this.pages = pages;
-        allPrintedBooks.add(this);
+        this.lengthInMinutes = lengthInMinutes;
+        allAudioBooks.add(this);
 
     }
-    public int getPages(){
-        return pages;
+    public int getLengthInMinutes(){
+        return lengthInMinutes;
     }
 
 
-    public void setPages(int pages){
-        this.pages = pages;
+    public void setLengthInMinutes(int lengthInMinutes){
+        this.lengthInMinutes = lengthInMinutes;
     }
     public double getCost(){
-        return pages * COST_PER_PAGE;
+        return lengthInMinutes * COST_PER_MINUTE;
 
     }
-    public static List<PrintedBook> getAllPrintedBooks(){
-        return allPrintedBooks;
+    public static List<AudioBook> getAllAudioBooks(){
+        return allAudioBooks;
     }
     protected void storeBookInfo(String title, String author, Genre genre, double cost){
-        allPrintedBooks.add(this);
+        allAudioBooks.add(this);
     }   
-    public static double computeAveragePages(){
-        if (allPrintedBooks.isEmpty()){
+    public static double computeAverageLength(){
+        if (allAudioBooks.isEmpty()){
             return 0.0;
         }
-        int totalPages = 0;
-        for (PrintedBook book : allPrintedBooks){
-            totalPages += book.getPages();
+        int totalLengthInMinutes = 0;
+        for (AudioBook book : allAudioBooks){
+            totalLengthInMinutes += book.getLengthInMinutes();
         }
-        return (double) totalPages / allPrintedBooks.size();
+        return (double) totalLengthInMinutes / allAudioBooks.size();
 
     }
-    public static void displayLastThreePrintedBooks(){
-        System.out.println(" The last 3 printned books");
-        if (allPrintedBooks.isEmpty()){
-            System.out.println("No printed books.");
+    public static void displayLastThreeAudioBooks(){
+        System.out.println(" The last 3 audio books");
+        if (allAudioBooks.isEmpty()){
+            System.out.println("No Audio books.");
             return;
         }
-        int size = allPrintedBooks.size();
+        int size = allAudioBooks.size();
         int start = Math.max(0, size - 3);
         for (int i = start; i < size; i++){
-            PrintedBook book = allPrintedBooks.get(i);
-            System.out.printf("%d. %s - %d pages\n", (i - start +1), book.getTitle(), book.getPages());
+            AudioBook book = allAudioBooks.get(i);
+            System.out.printf("%d. %s - %d min\n", (i - start +1), book.getTitle(), book.getLengthInMinutes());
         }
     }
-    public static double getTotalPrintedBookCost(){
+    public static double getTotalAudioBookCost(){
         double total = 0.0;
-        for (PrintedBook book : allPrintedBooks){
+        for (AudioBook book : allAudioBooks){
             total += book.getCost();
         }
         return total;
