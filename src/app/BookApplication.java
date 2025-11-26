@@ -79,4 +79,16 @@ public class BookApplication implements BookOps{
             System.out.println("No books found within this genre");
         }
     }
+    public void displayMenu() {
+        System.out.println("BOOK APP MENU");
+        System.out.println("1. Add a book");
+        System.out.println("2. Remove a book");
+        System.out.println("3. Display all books");
+        System.out.println("4.Display last SIX books");
+        System.out.println("5. Display Books by genre");
+        System.out.println("6. Get book Count by genre");
+        System.out.println("7. Get total cost");
+        System.out.println("8.Exit");
+        System.out.print("Enter your choice: ");
+    }
 }
