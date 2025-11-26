@@ -66,4 +66,17 @@ public class BookApplication implements BookOps{
             System.out.println((i + 1) + ". " + books.get(i));
         }
     }
+        public void displayBooksByGenre(Genre g) {
+        System.out.println("Books in Genre: " + g + " ");
+        boolean found = false;
+        for (Book book : books) {
+            if (book.getGenre() == g) {
+                System.out.println("  " + book);
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No books found within this genre");
+        }
+    }
 }

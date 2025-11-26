@@ -35,6 +35,9 @@ public class TestBookApplication{
         System.out.println("Test:removeBook");
         app.removeBook("Animal Farm");
         app.displayAllBooks();
+        System.out.println("Testing of: displayBooksByGenre");
+        app.displayBooksByGenre(Genre.FICTION);
+        app.displayBooksByGenre(Genre.SCIFI);
 
     }
 }
