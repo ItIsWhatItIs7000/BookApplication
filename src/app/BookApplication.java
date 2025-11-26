@@ -38,4 +38,32 @@ public class BookApplication implements BookOps{
         }
         return total;
     }
+        public void removeBook(String title) {
+        Book toRemove = null;
+        for (Book book : books) {
+            if (book.getTitle().equalsIgnoreCase(title)) {
+                toRemove = book;
+                break;
+            }
+
+        }
+        if (toRemove != null) {
+            books.remove(toRemove);
+            System.out.println("Book removed: " + title);
+        } else {
+            System.out.println("Book not found: " + title);
+
+        }
+    }
+    
+    public void displayAllBooks() {
+        if (books.isEmpty()) {
+            System.out.println("No books in the application.");
+            return;
+        }
+        System.out.println("All Books ");
+        for (int i = 0; i < books.size(); i++) {
+            System.out.println((i + 1) + ". " + books.get(i));
+        }
+    }
 }

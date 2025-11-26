@@ -30,6 +30,11 @@ public class TestBookApplication{
         System.out.println("Test: getTotalCost()");
         System.out.printf("Total costs of all books: $%.2f\n", app.getTotalCost());
         System.out.println("If I can see this we coolio");
+        System.out.println("Test: displayAllBooks");
+        app.displayAllBooks();
+        System.out.println("Test:removeBook");
+        app.removeBook("Animal Farm");
+        app.displayAllBooks();
 
     }
 }
