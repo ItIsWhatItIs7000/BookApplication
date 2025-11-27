@@ -16,5 +16,12 @@ public class TestFileManager {
         FileManager.writeBooksToFile("books.txt", books);
         
         System.out.println(" test complete!");
+        System.out.println("Testing: readBooksFromFile()");
+        List<Book> loadedBooks = FileManager.readBooksFromFile("books.txt");
+        
+        System.out.println("Loaded " + loadedBooks.size() + " books:");
+        for (Book book : loadedBooks) {
+            System.out.println("  " + book);
+        }
     }
 }
