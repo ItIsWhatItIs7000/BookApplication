@@ -3,6 +3,7 @@ public abstract class Book{
     private String title;
     private String author;
     private Genre genre;
+    private double cost;
     public Book(String title, String author, Genre genre){
         this.title = title;
         this.author = author;
