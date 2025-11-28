@@ -56,6 +56,17 @@ public class BookApplication implements BookOps{
 
         }
     }
+    public void saveBooksToFile(String path) {
+    FileManager.writeBooksToFile(path, books);
+}
+
+public void loadBooksFromFile(String path) {
+    List<Book> loadedBooks = FileManager.readBooksFromFile(path);
+    for (Book book : loadedBooks) {
+        books.add(book);
+    }
+    System.out.println("Books loaded from file.");
+}
     
     public void displayAllBooks() {
         if (books.isEmpty()) {
@@ -89,7 +100,9 @@ public class BookApplication implements BookOps{
         System.out.println("5. Display Books by genre");
         System.out.println("6. Get book Count by genre");
         System.out.println("7. Get total cost");
-        System.out.println("8.Exit");
+        System.out.println("8. Save books to file");
+        System.out.println("9. Load books from file");
+        System.out.println("10. Exit");
         System.out.print("Enter your choice: ");
     }
         public void run() {
@@ -157,6 +170,16 @@ public class BookApplication implements BookOps{
                 System.out.printf("\nTotal Cost: $%.2f\n", getTotalCost());
                 
             } else if (choice == 8) {
+                System.out.print("Enter file path to save: ");
+                String path = scanner.nextLine();
+                saveBooksToFile(path);
+                
+            } else if (choice == 9) {
+                System.out.print("Enter file path to load: ");
+                String path = scanner.nextLine();
+                loadBooksFromFile(path);
+                
+            } else if (choice == 10) {
                 System.out.println("Goodbye!");
                 running = false;
             } else {

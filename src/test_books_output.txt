@@ -1,0 +1,6 @@
+Printed,20000 Leguas de viaje Submarino,Julio Verne,FICTION,328
+Printed,lORD OF tHE rINGS,Tolkien,FANTASY,348
+Printed,Brave NEW World,Huxley,SCIFI,346
+Printed,Farenheit 451,Bradbury,SCIFI,743
+Printed,Pedro Paramo,Juan Rulfo,FICTION,326
+Printed,The Hobbit,Tolkien,FANTASY,444

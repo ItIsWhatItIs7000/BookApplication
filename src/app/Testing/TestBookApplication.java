@@ -38,6 +38,16 @@ public class TestBookApplication{
         System.out.println("Testing of: displayBooksByGenre");
         app.displayBooksByGenre(Genre.FICTION);
         app.displayBooksByGenre(Genre.SCIFI);
+        System.out.println("\nTest: saveBooksToFile()");
+        app.saveBooksToFile("test_books_output.txt");
+
+        System.out.println("\nTest: loadBooksFromFile()");
+        BookApplication app2 = new BookApplication();
+        app2.loadBooksFromFile("test_books_output.txt");
+        System.out.println("Books loaded into new app:");
+        app2.displayAllBooks();
+
+        System.out.println("\nAll tests completed!");
 
     }
 }

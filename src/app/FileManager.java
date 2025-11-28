@@ -17,12 +17,12 @@ public class FileManager {
             for (Book book : books) {
                 if (book instanceof PrintedBook) {
                     PrintedBook pb = (PrintedBook) book;
-                    pw.println("Printed- " + pb.getTitle() + " - " + pb.getAuthor() + " - " + 
-                              pb.getGenre() + " - " + pb.getPages());
+                    pw.println("Printed," + pb.getTitle() + "," + pb.getAuthor() + "," + 
+                              pb.getGenre() + "," + pb.getPages());
                 } else if (book instanceof AudioBook) {
                     AudioBook ab = (AudioBook) book;
-                    pw.println("Audio /" + ab.getTitle() + "/ " + ab.getAuthor() + " / " + 
-                              ab.getGenre() + " / " + ab.getLengthInMinutes());
+                    pw.println("Audio," + ab.getTitle() + "," + ab.getAuthor() + "," + 
+                              ab.getGenre() + "," + ab.getLengthInMinutes());
                 }
             }
             
