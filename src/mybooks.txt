@@ -1,0 +1,5 @@
+Printed,1984,George Orwell,FICTION,328
+Printed,Sophie's World,Jostein Gaarder,OTHER,283
+Audio,The Selfish Gene,Richard Dawkins,SCIENCE,900
+Printed,TheHobbit,Tolkien,FANTASY,1000
+Audio,Atomic Habits,Clear,NONFICTION,200
